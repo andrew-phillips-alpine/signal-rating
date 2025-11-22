@@ -1,6 +1,9 @@
 node_modules
-.git
 npm-debug.log
+.next
+out
+.git
+.gitignore
+*.log
 temp_pdfs
-.DS_Store
-
+submissions_data.json

@@ -1,0 +1,94 @@
+:root {
+  --navy: #00002c;
+  --blue: #0060ff;
+  --cyan: #00ffff;
+  --green: #00ff88;
+  --muted: #9da3ae;
+  --card: #0b0b2f;
+  --border: rgba(0, 255, 255, 0.12);
+}
+
+.report-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  color: #fff;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+.report-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.score-hero {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.score-block {
+  background: #0f1036;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.score-value {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 255, 255, 0.12);
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recommendations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.rec-card {
+  background: #0f1036;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: var(--navy);
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.section-title {
+  margin: 0 0 12px;
+}

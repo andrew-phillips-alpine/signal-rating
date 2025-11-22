@@ -1,10 +1,30 @@
 version: "3.9"
+
 services:
-  signal-rating:
-    image: ghcr.io/andrew-phillips-alpine/signal-rating:latest
-    ports:
-      - "3000:3000"
+  app:
+    image: __IMAGE__
     restart: unless-stopped
     environment:
       - NODE_ENV=production
+      - PORT=3000
+      - APP_NAME=alpine-signal-rating-leadmagnet
+      - FORM_ENDPOINT=${FORM_ENDPOINT}
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - EMAIL_TO=${EMAIL_TO}
+    ports:
+      - "3000:3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alpine-signal-rating-leadmagnet.rule=Host(`signal.thealpinesystem.com`,`www.signal.thealpinesystem.com`)"
+      - "traefik.http.routers.alpine-signal-rating-leadmagnet.entrypoints=websecure"
+      - "traefik.http.routers.alpine-signal-rating-leadmagnet.tls=true"
+      - "traefik.http.routers.alpine-signal-rating-leadmagnet.tls.certresolver=letsencrypt"
+      - "traefik.http.services.alpine-signal-rating-leadmagnet.loadbalancer.server.port=3000"
+      - "traefik.http.services.alpine-signal-rating-leadmagnet.loadbalancer.healthcheck.interval=0"
+    networks:
+      - buildlabs-net
 
+networks:
+  buildlabs-net:
+    external: true

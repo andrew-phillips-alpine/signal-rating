@@ -149,18 +149,30 @@ function setupEventListeners() {
         wizardAnswers.arr = e.target.value;
         wizardAnswers.cohort = e.target.value; // Backward compatibility
         updateNextButton();
+        // Auto-advance to next question after brief delay
+        setTimeout(() => {
+            nextQuestion();
+        }, 400);
     });
 
     // Employees selection
     document.getElementById('employees-select').addEventListener('change', function(e) {
         wizardAnswers.employees = e.target.value;
         updateNextButton();
+        // Auto-advance to next question after brief delay
+        setTimeout(() => {
+            nextQuestion();
+        }, 400);
     });
 
     // Sector selection
     document.getElementById('sector-select').addEventListener('change', function(e) {
         wizardAnswers.sector = e.target.value;
         updateNextButton();
+        // Auto-advance to next question after brief delay
+        setTimeout(() => {
+            nextQuestion();
+        }, 400);
     });
 
     // Top challenge options
@@ -178,6 +190,11 @@ function setupEventListeners() {
             e.target.closest('.scale-option').classList.add('selected');
 
             updateNextButton();
+
+            // Auto-advance to next question after brief delay
+            setTimeout(() => {
+                nextQuestion();
+            }, 400);
         });
     });
 }
@@ -198,6 +215,11 @@ function selectOption(questionId, value, element) {
     element.classList.add('selected');
 
     updateNextButton();
+
+    // Auto-advance to next question after brief delay
+    setTimeout(() => {
+        nextQuestion();
+    }, 400);
 }
 
 function selectChallengeOption(value, element) {
@@ -216,6 +238,11 @@ function selectChallengeOption(value, element) {
     element.classList.add('selected');
 
     updateNextButton();
+
+    // Auto-advance to next question after brief delay
+    setTimeout(() => {
+        nextQuestion();
+    }, 400);
 }
 
 function updateProgress() {
